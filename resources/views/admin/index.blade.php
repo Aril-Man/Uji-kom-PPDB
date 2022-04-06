@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 @section('head')
 @section('title', 'Data Peserta Registrasi')
 @section('content')
@@ -6,7 +6,6 @@
         <div class="section-header">
             <h1>Data Peserta Registrasi</h1>
         </div>
-
         @if (Session::has('success'))
             <div class="alert alert-success alert-has-icon">
                 <div class="alert-icon"><i class="far fa-lightbulb"></i></div>
@@ -17,7 +16,6 @@
                 </div>
             </div>
         @endif
-
         <div class="row">
             <div class="col-lg-15 col-md-12 col-12 col-sm-12">
                 <div class="card">
@@ -53,8 +51,15 @@
                                                 <td>{{ $p->asal_sekolah }}</td>
                                                 <td>{{ $p->jurusan }}</td>
                                                 <td class="d-flex">
-                                                    <a href="{{ route('peserta.cetak', $p->id) }}"
-                                                        class="btn btn-success">Cetak</a>
+                                                    <form action="{{ route('admin.delete', $p->id) }}" method="POST"
+                                                        class="d-inline">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button class="btn btn-danger"
+                                                            onclick="return confirm('Yakin Mau diHapus?')">Hapus</button>
+                                                    </form>
+                                                    <a href="{{ route('admin.edit', $p->id) }}"
+                                                        class="btn btn-warning">Edit</a>
                                                 </td>
                                             </tr>
                                         @endforeach

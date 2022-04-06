@@ -10,8 +10,7 @@
                     <h4>Edit Peserta</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('peserta.update', $peserta->id) }}" method="POST"
-                        enctype="multipart/form-data">
+                    <form action="{{ route('admin.update', $peserta->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('patch')
                         <div class="form-group">

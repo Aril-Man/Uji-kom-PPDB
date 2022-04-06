@@ -51,49 +51,6 @@ class PesertaController extends Controller
         return redirect()->route('peserta.index')->with('success', 'Selamat , Registrasi Berhasil!');
     }
 
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Peserta  $peserta
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Peserta $peserta, $id)
-    {
-        $peserta = Peserta::find($id);
-        return view('peserta.edit', compact('peserta'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Peserta  $peserta
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Peserta $peserta, $id)
-    {
-
-        $peserta = Peserta::find($id);
-        $peserta->update($request->all());
-
-        return redirect()->route('peserta.index')->with('success', 'Data berhasil diubah!');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Peserta  $peserta
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Peserta $peserta, $id)
-    {
-        $peserta = Peserta::find($id);
-        $peserta->delete();
-
-        return redirect()->route('peserta.index')->with('success', 'Data sudah dihapus!');
-    }
-
     public function cetak($id)
     {
         $pesertas = Peserta::find($id);
