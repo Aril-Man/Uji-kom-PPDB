@@ -74,7 +74,7 @@
 
             <div class="about__container bd-grid">
                 <div class="about__img">
-                    <img src="{{ asset('assets_main/img/smkwikrama.jpg') }}" alt="" />
+                    <iframe width="500" height="300" src="https://www.youtube.com/embed/Wag6WcgKO6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
 
                 <div>
